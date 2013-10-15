@@ -32,6 +32,12 @@ $conf['at_seo_links_checking'] = function() {
 };
 ````
 
+The configuration can be lazy ;)
+
+````php
+$conf['at_seo_links_checking'] = '\Drupal\my_module\Config\AT\Seo\Link\Checker::getConfig';
+````
+
 ````bash
 drush at-seo-links-checker
 drush at-seo-links-checker --entity=node:*
