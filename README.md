@@ -2,7 +2,7 @@ I have an idea, will implement later
 
 ````php
 /**
- * @file config.php
+ * @file /sites/default/settings.php
  */
 $conf['at_seo_links_checking'] = function() {
   $config['pages'] = array(
