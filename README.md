@@ -1,41 +1,20 @@
 I have an idea, will implement later
 
-````php
-/**
- * @file /sites/default/settings.php
- */
-$conf['at_seo_links_checking'] = function() {
-  $config['pages'] = array(
-    'entity' => array(
-      'user' => array('user'),
-      'node' => array('article'),
-      'taxonomy_term' => array('tags', 'product_types'),
-    ),
-    'menu' => array('primary-links', 'footer-links'),
-    'ctool_pages' => array(
-      'about-us',
-      'contact-us/%/%' => array(
-        array('sales', 'director')
-      )
-    ),
-    'custom_pages' => array(
-      'ads', '/banner/new-year-events.png',
-    )
-  );
 
-  $config['notification'] = array(
-    'recipients' => array('webmaster@coolweb.com'),
-    'check' => array('a', 'img', 'css', 'js', 'iframe', 'object', 'embed'),
-  );
-
-  return $config;
-};
-````
-
-The configuration can be lazy ;)
-
-````php
-$conf['at_seo_links_checking'] = '\Drupal\my_module\Config\AT\Seo\Link\Checker::getConfig';
+````yaml
+at_seo_links_checking:
+  entity:
+    user: [user]
+    node: [article]
+    taxonomy_term: [tags, product_types]
+    menu: [primary-links, footer-links]
+  ctool_pages:
+    'about-us'
+    contact-us/%/%: ['sales', 'director']
+    custom_pages: [ads, '/banner/new-year-events.png']
+  notification:
+    recipients: ['webmaster@coolweb.com']
+    check: [a, img, css, js, iframe, object, embed]
 ````
 
 ````bash
